@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -71,7 +72,7 @@ public class PlayerStats : MonoBehaviour
 
             if (currentHealth <= 0)
             {
-                Kill();
+                SceneManager.LoadScene(1);
             }
         }
        
