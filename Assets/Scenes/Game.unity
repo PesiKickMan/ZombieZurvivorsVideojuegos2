@@ -421,6 +421,135 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1948496328}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &485821428
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 485821430}
+  - component: {fileID: 485821429}
+  m_Layer: 0
+  m_Name: Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &485821429
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485821428}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 23c0a32ccd69c144195ec3efcd9dd998, type: 3}
+  m_Resource: {fileID: 8300000, guid: 23c0a32ccd69c144195ec3efcd9dd998, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &485821430
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485821428}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.18427505, y: 0.06892831, z: -0.0014937136}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,7 +773,7 @@ MonoBehaviour:
   m_ApplyToSortingLayers: 00000000c98c2cc22d31b53c3de2577f
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
-  m_LightOrder: 0
+  m_LightOrder: 1
   m_AlphaBlendOnOverlap: 0
   m_OverlapOperation: 0
   m_NormalMapDistance: 3
@@ -1291,7 +1420,7 @@ MonoBehaviour:
   - waveName: Wave 1
     enemyGroups:
     - enemyName: Zombie
-      enemyCount: 20
+      enemyCount: 15
       spawnCount: 0
       enemyPrefab: {fileID: 8075562314338117443, guid: bf2698c4e9f8b3a468d728fa4f265f49, type: 3}
     waveQuota: 0
@@ -1308,20 +1437,20 @@ MonoBehaviour:
       spawnCount: 0
       enemyPrefab: {fileID: 8075562314338117443, guid: bf2698c4e9f8b3a468d728fa4f265f49, type: 3}
     waveQuota: 0
-    spawnInterval: 4
+    spawnInterval: 2
     spawnCount: 0
   - waveName: Wave 3
     enemyGroups:
     - enemyName: Blue Zombie
-      enemyCount: 15
+      enemyCount: 20
       spawnCount: 0
       enemyPrefab: {fileID: 8075562314338117443, guid: c1bedee68abcfd046826cecd0f11762c, type: 3}
     - enemyName: Zombie
-      enemyCount: 20
+      enemyCount: 15
       spawnCount: 0
       enemyPrefab: {fileID: 8075562314338117443, guid: bf2698c4e9f8b3a468d728fa4f265f49, type: 3}
     waveQuota: 0
-    spawnInterval: 4
+    spawnInterval: 1
     spawnCount: 0
   currentWaveCount: 0
   enemiesAlive: 0
@@ -1792,7 +1921,12 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2043464638340152548, guid: 9e15cc44759713e4b831add2d3067bda, type: 3}
+    - {fileID: 2892497813888116405, guid: 9e15cc44759713e4b831add2d3067bda, type: 3}
+    - {fileID: 3169949717051571320, guid: 9e15cc44759713e4b831add2d3067bda, type: 3}
+    - {fileID: 6673848965928602363, guid: 9e15cc44759713e4b831add2d3067bda, type: 3}
+    - {fileID: 5612662744748678583, guid: 9e15cc44759713e4b831add2d3067bda, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e15cc44759713e4b831add2d3067bda, type: 3}
@@ -1809,3 +1943,4 @@ SceneRoots:
   - {fileID: 1019359650}
   - {fileID: 1713476758}
   - {fileID: 1887734461}
+  - {fileID: 485821430}

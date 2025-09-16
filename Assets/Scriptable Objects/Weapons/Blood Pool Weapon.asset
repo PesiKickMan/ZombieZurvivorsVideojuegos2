@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28533f0ef2e3a945896a342a1a022a6, type: 3}
   m_Name: Blood Pool Weapon
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7679781238796466049, guid: c7e35a200f2174c4781ee6c2366462a9, type: 3}
+  prefab: {fileID: 1651563175036526177, guid: fa6ae4b949058674dbe90745df459f90, type: 3}
   damage: 5
   speed: 0
   cooldownDuration: 5

@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 42c84820379097d498df9b0c908d4127, type: 2}
+  ultimoMovimiento: {x: 0, y: 0}
 --- !u!114 &5243915197482443127
 MonoBehaviour:
   m_ObjectHideFlags: 0
