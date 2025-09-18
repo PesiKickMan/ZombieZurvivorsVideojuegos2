@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      edificio_caido_parte_pequena_0: -760958027866215742
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
