@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      edificio_caido_parte_superior_0: 6747788283262341211
+      edificio_caido_parte_superior_1: -7501453974031104487
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
