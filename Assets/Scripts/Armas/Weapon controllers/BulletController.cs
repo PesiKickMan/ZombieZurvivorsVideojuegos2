@@ -12,7 +12,7 @@ public class BulletController : WeaponController
     {
         base.Attack();
         GameObject spawnedBullet = Instantiate(weaponData.Prefab);
-        spawnedBullet.transform.position = transform.position;
+        spawnedBullet.transform.position = transform.position + new Vector3(0, 1, 0);
         spawnedBullet.GetComponent<BulletBehaviour>().DirectionChecker(pm.vectorUltimoMovimiento);
     }
 }

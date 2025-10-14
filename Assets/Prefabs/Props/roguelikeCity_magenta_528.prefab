@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2601182168828941582}
   - component: {fileID: 54976986257729641}
   - component: {fileID: 3816519833699087135}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: roguelikeCity_magenta_528
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0016608834, y: -0.280689}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -132,5 +132,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.625, y: 0.9375}
+  m_Size: {x: 0.5087383, y: 0.25986022}
   m_EdgeRadius: 0
