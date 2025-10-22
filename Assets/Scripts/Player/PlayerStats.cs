@@ -6,7 +6,7 @@ public class PlayerStats : MonoBehaviour
     public CharacterScriptableObject characterData;
 
     //Stats Actuales
-    public float currentHealth;
+    //public float currentHealth;
     float currentRecovery;
     float currentMoveSpeed;
     float currentMight;
@@ -24,9 +24,20 @@ public class PlayerStats : MonoBehaviour
     float invincibilityTimer;
     bool isInvincible;
 
+    [Header("Health")]
+    [SerializeField] public float currentHealth;
+    [SerializeField] public float maxHealth;
+    [SerializeField] public HealthBar healthBar;
+
+    private void Start()
+    {
+        maxHealth = characterData.MaxHealth;
+        currentHealth = maxHealth;
+        HealthBar.Instance.InitializeHealthBar(currentHealth);
+    }
+
     void Awake()
     {
-        currentHealth = characterData.MaxHealth;
         currentRecovery = characterData.Recovery;
         currentMoveSpeed = characterData.MoveSpeed;
         currentMight = characterData.Might;
@@ -74,6 +85,7 @@ public class PlayerStats : MonoBehaviour
             {
                 SceneManager.LoadScene(1);
             }
+            HealthBar.Instance.ChangeCurrentHealth(currentHealth);
         }
        
     }

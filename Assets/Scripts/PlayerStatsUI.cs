@@ -10,7 +10,7 @@ public class PlayerStatsUI : MonoBehaviour
     void Update()
     {
         statsText.text = 
-            $"Vida: {playerStats.currentHealth}\n" +
+            //$"Vida: {playerStats.currentHealth}\n" +
             $"Experiencia: {playerStats.experience}\n" +
             $"Nivel: {playerStats.level}";
     }
