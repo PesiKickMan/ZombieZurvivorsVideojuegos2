@@ -18,13 +18,12 @@ public class SoundManager : MonoBehaviour
 
     void Awake()
     {
-
         if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else
+        else if (instance != this)
         {
             Destroy(gameObject);
         }
@@ -39,7 +38,10 @@ public class SoundManager : MonoBehaviour
     
         public void PlaySFX(AudioClip clip)
     {
-        sfxSrc.PlayOneShot(clip);
+        if (sfxSrc != null && clip != null)
+        {
+            sfxSrc.PlayOneShot(clip);
+        }
     }
 
 }

@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class BulletBehaviour : ProjectileWeaponBehaviour
 {
-    private SoundManager soundManager;
-
     protected override void Start()
     {
         base.Start();
-        soundManager = GameObject.FindGameObjectWithTag("Sound").GetComponent<SoundManager>();
-        soundManager.PlaySFX(soundManager.fire);
+        if (SoundManager.instance != null)
+        {
+            SoundManager.instance.PlaySFX(SoundManager.instance.fire);
+        }
     }
 
     void Update()

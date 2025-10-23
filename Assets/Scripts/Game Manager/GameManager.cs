@@ -40,8 +40,12 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
+        Time.timeScale = 1f;  // Asegurarse que el tiempo está normal antes de reiniciar
+        foreach(GameObject obj in GameObject.FindGameObjectsWithTag("Bullet"))
+        {
+            Destroy(obj);
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Time.timeScale = 1f;
     }
 
     public void Quit(){

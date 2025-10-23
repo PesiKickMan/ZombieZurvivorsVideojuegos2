@@ -1,5 +1,7 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -29,8 +31,28 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] public float maxHealth;
     [SerializeField] public HealthBar healthBar;
 
+    [Header("Game Over UI")]
+    [SerializeField] 
+    CanvasGroup fadeCanvasGroup; 
+    [SerializeField] 
+    TextMeshProUGUI gameOverText;
+    [SerializeField]
+    float fadeDuration = 1.0f;
+
+    bool gameOverTriggered = false;
+
     private void Start()
     {
+        if (fadeCanvasGroup != null)
+        {
+            fadeCanvasGroup.alpha = 0f;
+            fadeCanvasGroup.blocksRaycasts = false;
+            fadeCanvasGroup.interactable = false;
+        }
+
+        if (gameOverText != null)
+            gameOverText.gameObject.SetActive(false);
+        
         maxHealth = characterData.MaxHealth;
         currentHealth = maxHealth;
         HealthBar.Instance.InitializeHealthBar(currentHealth);
@@ -83,20 +105,44 @@ public class PlayerStats : MonoBehaviour
 
             if (currentHealth <= 0)
             {
-                SceneManager.LoadScene(1);
+                TriggerGameOver();
+                //SceneManager.LoadScene(1);
             }
             HealthBar.Instance.ChangeCurrentHealth(currentHealth);
         }
        
     }
-
-    public void Kill()
+    
+        void TriggerGameOver()
     {
-        Debug.Log("El jugador ha muerto.");
-        #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-        #else
-            Application.Quit();
-        #endif
+        if (gameOverTriggered) return;
+        gameOverTriggered = true;
+        StartCoroutine(GameOverSequence());
+    }
+    
+    IEnumerator GameOverSequence()
+    {
+        // Mostrar y hacer fade in usando unscaledDeltaTime para que funcione aun si pausas el juego
+        if (fadeCanvasGroup != null)
+        {
+            float elapsed = 0f;
+            fadeCanvasGroup.blocksRaycasts = true; // bloquear input
+            fadeCanvasGroup.interactable = false;
+
+            while (elapsed < fadeDuration)
+            {
+                elapsed += Time.unscaledDeltaTime;
+                fadeCanvasGroup.alpha = Mathf.Clamp01(elapsed / Mathf.Max(0.0001f, fadeDuration));
+                yield return null;
+            }
+
+            fadeCanvasGroup.alpha = 1f;
+        }
+
+        if (gameOverText != null)
+            gameOverText.gameObject.SetActive(true);
+
+        // Pausar el juego (opcional). Si no quieres pausar, comenta la línea siguiente.
+        Time.timeScale = 0f;
     }
 }

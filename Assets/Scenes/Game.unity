@@ -1233,7 +1233,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 50, y: 313.5}
+  m_AnchoredPosition: {x: 63, y: 195}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &899185596
@@ -1472,7 +1472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 825870127}
-  remainingTime: 10
+  remainingTime: 90
   fadeCanvasGroup: {fileID: 2107060298}
   gameOverText: {fileID: 1916922546}
   fadeDuration: 1
@@ -2029,7 +2029,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -850.3, y: 488.35}
+  m_AnchoredPosition: {x: -441.5, y: 195}
   m_SizeDelta: {x: -0.5999756, y: 3.2999878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1818183873
@@ -2716,6 +2716,9 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 0
   healthBar: {fileID: 1116545666}
+  fadeCanvasGroup: {fileID: 2107060298}
+  gameOverText: {fileID: 1916922546}
+  fadeDuration: 1
 --- !u!114 &2140438586
 MonoBehaviour:
   m_ObjectHideFlags: 0
