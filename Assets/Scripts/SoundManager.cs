@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
@@ -10,7 +9,6 @@ public class SoundManager : MonoBehaviour
     [Header("Audio Source")]
     [SerializeField] AudioSource musicSrc;
     [SerializeField] AudioSource sfxSrc;
-
 
     [Header("Audio Clips")]
     public AudioClip music;
@@ -22,6 +20,7 @@ public class SoundManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            EnsureAudioSources();
         }
         else if (instance != this)
         {
@@ -31,17 +30,57 @@ public class SoundManager : MonoBehaviour
 
     void Start()
     {
-        musicSrc.clip = music;
-        musicSrc.Play();
-
-    }
-    
-        public void PlaySFX(AudioClip clip)
-    {
-        if (sfxSrc != null && clip != null)
+        // Asegurarse de que la fuente de música exista antes de usarla
+        if (music != null)
         {
-            sfxSrc.PlayOneShot(clip);
+            EnsureMusicSource();
+            musicSrc.clip = music;
+            musicSrc.loop = true;
+            musicSrc.playOnAwake = false;
+            musicSrc.Play();
         }
     }
 
+    // Método genérico para reproducir cualquier SFX
+    public void PlaySFX(AudioClip clip)
+    {
+        if (clip == null) return;
+        EnsureSfxSource();
+        sfxSrc.PlayOneShot(clip);
+    }
+
+    // Método específico para el disparo (opcional)
+    public void PlayFire()
+    {
+        if (fire == null) return;
+        EnsureSfxSource();
+        sfxSrc.PlayOneShot(fire);
+    }
+
+    void EnsureAudioSources()
+    {
+        EnsureMusicSource();
+        EnsureSfxSource();
+    }
+
+    void EnsureMusicSource()
+    {
+        // la comparación "== null" también detecta objetos Unity destruidos
+        if (musicSrc == null)
+        {
+            musicSrc = gameObject.AddComponent<AudioSource>();
+            musicSrc.playOnAwake = false;
+            musicSrc.loop = true;
+        }
+    }
+
+    void EnsureSfxSource()
+    {
+        if (sfxSrc == null)
+        {
+            sfxSrc = gameObject.AddComponent<AudioSource>();
+            sfxSrc.playOnAwake = false;
+            sfxSrc.loop = false;
+        }
+    }
 }
