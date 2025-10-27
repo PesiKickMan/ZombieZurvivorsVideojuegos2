@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5407867313194975870}
   - component: {fileID: 1833021990309785232}
   - component: {fileID: 8832384900465864539}
-  - component: {fileID: -6938835482140856133}
   - component: {fileID: 4229223316175770413}
+  - component: {fileID: 1802120339516515527}
   m_Layer: 0
   m_Name: monster_flesh_teeth_sheet_0
   m_TagString: Untagged
@@ -112,7 +112,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!58 &-6938835482140856133
+--- !u!114 &4229223316175770413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651563175036526177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99ad36ec3da47d84e9b6be6f81befc8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: 83eade0eb2453d34db8e42dd3e9656a1, type: 2}
+  destroyAfterSeconds: 2
+--- !u!58 &1802120339516515527
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,19 +160,5 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 1.155
---- !u!114 &4229223316175770413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1651563175036526177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99ad36ec3da47d84e9b6be6f81befc8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: 83eade0eb2453d34db8e42dd3e9656a1, type: 2}
-  destroyAfterSeconds: 2
+  m_Offset: {x: -0.00935185, y: 1.0319462}
+  m_Radius: 0.64067984
