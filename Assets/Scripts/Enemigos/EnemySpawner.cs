@@ -38,6 +38,8 @@ public class EnemySpawner : MonoBehaviour
 
     Transform player;
 
+    public int cantidadMuertes = 0;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -123,5 +125,6 @@ public class EnemySpawner : MonoBehaviour
     public void OnEnemyKilled()
     {
         enemiesAlive--;
+        cantidadMuertes++;
     }
 }

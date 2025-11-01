@@ -9,6 +9,9 @@ public class EnemyStats : MonoBehaviour
     float currentHealth;
     float currentDamage;
 
+    //Contador de muertes
+    public int cantidadMuertes = 0;
+
     void Awake()
     {
         currentMoveSpeed = enemyData.MoveSpeed;
@@ -27,6 +30,7 @@ public class EnemyStats : MonoBehaviour
 
     public void Kill()
     {
+        cantidadMuertes++;
         EnemySpawner es = FindFirstObjectByType<EnemySpawner>();
         DropRateManager dropRateManager = FindFirstObjectByType<DropRateManager>();
         dropRateManager.DropItem(transform.position);
