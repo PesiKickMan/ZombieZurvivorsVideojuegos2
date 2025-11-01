@@ -1475,7 +1475,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 2140438585}
+  enemyStats: {fileID: 0}
   statsText: {fileID: 1203298400}
+  spawner: {fileID: 0}
 --- !u!114 &1019359652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2375,6 +2377,7 @@ MonoBehaviour:
   - {fileID: 949282306}
   - {fileID: 376769015}
   - {fileID: 121833579}
+  cantidadMuertes: 0
 --- !u!4 &1948496328
 Transform:
   m_ObjectHideFlags: 0
