@@ -2,12 +2,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("Win Condition")]
     [SerializeField]
-    int winCondition;
+    GameObject winLooseUI;
+    
+    [Header("Win Condition")]
+    public int winCondition;
     public EnemySpawner spawner;
 
     [Header("Game Over UI")]
@@ -18,7 +21,12 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     float fadeDuration = 1.0f;
 
+    [Header("Win UI")]
+    [SerializeField] 
+    TextMeshProUGUI winText;
+
     bool gameOverTriggered = false;
+    bool winTriggered = false;
 
     void Start()
     {
@@ -44,7 +52,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                if(!gameOverTriggered)
+                if(!gameOverTriggered && !winTriggered)
                 Resume();
             }
         }
@@ -56,12 +64,13 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Quit();
+            SceneManager.LoadScene("Title Screen");
+            //Quit();
         }
 
         if (spawner.cantidadMuertes >= winCondition)
         {
-            SceneManager.LoadScene("Title Screen");
+            TriggerWin();
         }
     }
 
@@ -96,9 +105,12 @@ public class GameManager : MonoBehaviour
         gameOverTriggered = true;
         StartCoroutine(GameOverSequence());
     }
-    
+
     IEnumerator GameOverSequence()
     {
+        if(winLooseUI != null)
+            winLooseUI.SetActive(true);
+        
         // Mostrar y hacer fade in usando unscaledDeltaTime para que funcione aun si pausas el juego
         if (fadeCanvasGroup != null)
         {
@@ -118,6 +130,42 @@ public class GameManager : MonoBehaviour
 
         if (gameOverText != null)
             gameOverText.gameObject.SetActive(true);
+
+        // Pausar el juego (opcional). Si no quieres pausar, comenta la línea siguiente.
+        Time.timeScale = 0f;
+    }
+
+    public void TriggerWin()
+    {
+        if (winTriggered) return;
+        winTriggered = true;
+        StartCoroutine(WinSequence());
+    }
+    
+    IEnumerator WinSequence()
+    {
+        if(winLooseUI != null)
+        winLooseUI.SetActive(true);
+        
+        // Mostrar y hacer fade in usando unscaledDeltaTime para que funcione aun si pausas el juego
+        if (fadeCanvasGroup != null)
+        {
+            float elapsed = 0f;
+            fadeCanvasGroup.blocksRaycasts = true; // bloquear input
+            fadeCanvasGroup.interactable = false;
+
+            while (elapsed < fadeDuration)
+            {
+                elapsed += Time.unscaledDeltaTime;
+                fadeCanvasGroup.alpha = Mathf.Clamp01(elapsed / Mathf.Max(0.0001f, fadeDuration));
+                yield return null;
+            }
+
+            fadeCanvasGroup.alpha = 1f;
+        }
+
+        if (winText != null)
+            winText.gameObject.SetActive(true);
 
         // Pausar el juego (opcional). Si no quieres pausar, comenta la línea siguiente.
         Time.timeScale = 0f;

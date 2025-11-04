@@ -44,4 +44,10 @@ public class TitleScreenManager : MonoBehaviour
         if (controlsPanel != null)
             controlsPanel.SetActive(!controlsPanel.activeSelf);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+    
 }

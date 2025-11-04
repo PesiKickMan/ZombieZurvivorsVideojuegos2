@@ -8,6 +8,7 @@ public class PlayerStatsUI : MonoBehaviour
     //public EnemyStats enemyStats;
     public TextMeshProUGUI statsText;
     public EnemySpawner spawner;
+    public GameManager gameManager;
 
     void Update()
     {
@@ -15,6 +16,6 @@ public class PlayerStatsUI : MonoBehaviour
             //$"Vida: {playerStats.currentHealth}\n" +
             $"Experiencia: {playerStats.experience}\n" +
             $"Nivel: {playerStats.level}\n" +
-            $"Muertes: {spawner.cantidadMuertes}";
+            $"Muertes: {spawner.cantidadMuertes}/{gameManager.winCondition}";
     }
 }
