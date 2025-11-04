@@ -5,7 +5,7 @@ using TMPro;
 public class PlayerStatsUI : MonoBehaviour
 {
     public PlayerStats playerStats;
-    public EnemyStats enemyStats;
+    //public EnemyStats enemyStats;
     public TextMeshProUGUI statsText;
     public EnemySpawner spawner;
 
