@@ -22,8 +22,12 @@ public class GameManager : MonoBehaviour
     float fadeDuration = 1.0f;
 
     [Header("Win UI")]
-    [SerializeField] 
+    [SerializeField]
     TextMeshProUGUI winText;
+
+    [Header("Pause Menu UI")]
+    [SerializeField]
+    private GameObject pauseMenu;
 
     bool gameOverTriggered = false;
     bool winTriggered = false;
@@ -40,6 +44,9 @@ public class GameManager : MonoBehaviour
 
         if (gameOverText != null)
             gameOverText.gameObject.SetActive(false);
+
+        if(pauseMenu != null)
+            pauseMenu.SetActive(false);
     }
 
     void Update()
@@ -52,8 +59,8 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                if(!gameOverTriggered && !winTriggered)
-                Resume();
+                if (!gameOverTriggered && !winTriggered)
+                    Resume();
             }
         }
 
@@ -64,8 +71,7 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene("Title Screen");
-            //Quit();
+            Quit();
         }
 
         if (spawner.cantidadMuertes >= winCondition)
@@ -77,11 +83,17 @@ public class GameManager : MonoBehaviour
     public void Pause()
     {
         Time.timeScale = 0f;
+
+        if (pauseMenu != null)
+            pauseMenu.SetActive(true);
     }
 
     public void Resume()
     {
         Time.timeScale = 1f;
+
+        if (pauseMenu != null)
+            pauseMenu.SetActive(false);
     }
 
     public void Restart()
@@ -96,7 +108,7 @@ public class GameManager : MonoBehaviour
 
     public void Quit()
     {
-        Application.Quit();
+        SceneManager.LoadScene("Title Screen");
     }
     
     public void TriggerGameOver()
