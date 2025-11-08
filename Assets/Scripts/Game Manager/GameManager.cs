@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
-    GameObject winLooseUI;
+    float fadeDuration = 1.0f;
+    
     
     [Header("Win Condition")]
     public int winCondition;
@@ -15,15 +16,19 @@ public class GameManager : MonoBehaviour
 
     [Header("Game Over UI")]
     [SerializeField] 
-    CanvasGroup fadeCanvasGroup; 
+    CanvasGroup looseFadeCanvasGroup; 
     [SerializeField] 
     TextMeshProUGUI gameOverText;
     [SerializeField]
-    float fadeDuration = 1.0f;
+    GameObject looseUI;
 
     [Header("Win UI")]
     [SerializeField]
     TextMeshProUGUI winText;
+    [SerializeField]
+    CanvasGroup winFadeCanvasGroup;
+    [SerializeField]
+    GameObject winUI;
 
     [Header("Pause Menu UI")]
     [SerializeField]
@@ -35,18 +40,24 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         // Asegurarse estado inicial UI
-        if (fadeCanvasGroup != null)
+        if (looseFadeCanvasGroup != null)
         {
-            fadeCanvasGroup.alpha = 0f;
-            fadeCanvasGroup.blocksRaycasts = false;
-            fadeCanvasGroup.interactable = false;
+            looseFadeCanvasGroup.alpha = 0f;
         }
+        
+        if (looseUI != null)
+            looseUI.SetActive(false);
 
-        if (gameOverText != null)
-            gameOverText.gameObject.SetActive(false);
-
-        if(pauseMenu != null)
+        if (pauseMenu != null)
             pauseMenu.SetActive(false);
+
+        if (winFadeCanvasGroup != null)
+        {
+            winFadeCanvasGroup.alpha = 0f;
+        }
+     
+        if (winUI != null)
+            winUI.SetActive(false);
     }
 
     void Update()
@@ -113,6 +124,7 @@ public class GameManager : MonoBehaviour
     
     public void TriggerGameOver()
     {
+        SoundManager.instance.PlaySFX(SoundManager.instance.playerDeath);
         if (gameOverTriggered) return;
         gameOverTriggered = true;
         StartCoroutine(GameOverSequence());
@@ -120,28 +132,23 @@ public class GameManager : MonoBehaviour
 
     IEnumerator GameOverSequence()
     {
-        if(winLooseUI != null)
-            winLooseUI.SetActive(true);
+        if(looseUI != null)
+            looseUI.SetActive(true);
         
         // Mostrar y hacer fade in usando unscaledDeltaTime para que funcione aun si pausas el juego
-        if (fadeCanvasGroup != null)
+        if (looseFadeCanvasGroup != null)
         {
             float elapsed = 0f;
-            fadeCanvasGroup.blocksRaycasts = true; // bloquear input
-            fadeCanvasGroup.interactable = false;
 
             while (elapsed < fadeDuration)
             {
                 elapsed += Time.unscaledDeltaTime;
-                fadeCanvasGroup.alpha = Mathf.Clamp01(elapsed / Mathf.Max(0.0001f, fadeDuration));
+                looseFadeCanvasGroup.alpha = Mathf.Clamp01(elapsed / Mathf.Max(0.0001f, fadeDuration));
                 yield return null;
             }
 
-            fadeCanvasGroup.alpha = 1f;
+            looseFadeCanvasGroup.alpha = 1f;
         }
-
-        if (gameOverText != null)
-            gameOverText.gameObject.SetActive(true);
 
         // Pausar el juego (opcional). Si no quieres pausar, comenta la línea siguiente.
         Time.timeScale = 0f;
@@ -156,28 +163,23 @@ public class GameManager : MonoBehaviour
     
     IEnumerator WinSequence()
     {
-        if(winLooseUI != null)
-        winLooseUI.SetActive(true);
+        if(winUI != null)
+        winUI.SetActive(true);
         
         // Mostrar y hacer fade in usando unscaledDeltaTime para que funcione aun si pausas el juego
-        if (fadeCanvasGroup != null)
+        if (winFadeCanvasGroup != null)
         {
             float elapsed = 0f;
-            fadeCanvasGroup.blocksRaycasts = true; // bloquear input
-            fadeCanvasGroup.interactable = false;
 
             while (elapsed < fadeDuration)
             {
                 elapsed += Time.unscaledDeltaTime;
-                fadeCanvasGroup.alpha = Mathf.Clamp01(elapsed / Mathf.Max(0.0001f, fadeDuration));
+                winFadeCanvasGroup.alpha = Mathf.Clamp01(elapsed / Mathf.Max(0.0001f, fadeDuration));
                 yield return null;
             }
 
-            fadeCanvasGroup.alpha = 1f;
+            winFadeCanvasGroup.alpha = 1f;
         }
-
-        if (winText != null)
-            winText.gameObject.SetActive(true);
 
         // Pausar el juego (opcional). Si no quieres pausar, comenta la línea siguiente.
         Time.timeScale = 0f;

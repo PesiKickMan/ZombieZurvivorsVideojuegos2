@@ -24,6 +24,9 @@ public class EnemyStats : MonoBehaviour
         currentHealth -= dmg;
         if (currentHealth <= 0f)
         {
+            if (SoundManager.instance != null)
+                SoundManager.instance.PlaySFX(SoundManager.instance.enemyDeath);
+            
             Kill();
         }
     }

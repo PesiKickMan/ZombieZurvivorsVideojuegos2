@@ -13,6 +13,8 @@ public class SoundManager : MonoBehaviour
     [Header("Audio Clips")]
     public AudioClip music;
     public AudioClip fire;
+    public AudioClip enemyDeath;
+    public AudioClip playerDeath;
 
     void Awake()
     {

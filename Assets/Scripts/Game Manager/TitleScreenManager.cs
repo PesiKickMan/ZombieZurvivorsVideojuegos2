@@ -10,6 +10,9 @@ public class TitleScreenManager : MonoBehaviour
 
         void Start()
     {
+        // Asegurarse de que el juego no esté pausado al iniciar el título
+        Time.timeScale = 1f;
+        
         // Asegurarse de que el panel de controles esté oculto al inicio
         if (controlsPanel != null)
             controlsPanel.SetActive(false);
