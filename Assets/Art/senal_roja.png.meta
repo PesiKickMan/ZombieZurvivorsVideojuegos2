@@ -1,10 +1,7 @@
 fileFormatVersion: 2
-guid: 3983e35fafbccf044bb28109f0d8c50a
+guid: fca5dbb3edba45546961954efd28c287
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -5819405851485710050
-    second: Camion_0
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -42,7 +39,7 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -100,23 +97,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Camion_0
+      name: senal_roja_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 5
-        width: 56
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 21
+        y: 0
+        width: 48
+        height: 84
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e195d5ae5315d3fa0800000000000000
-      internalID: -5819405851485710050
+      spriteID: cd83b02fb90790c4eb876e6580892e6c
+      internalID: -311203463
       vertices: []
       indices: 
       edges: []
@@ -125,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8c3d34113cb59914191a2aac20a63a3b
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +132,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Camion_0: -5819405851485710050
+      senal_roja_0: -311203463
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

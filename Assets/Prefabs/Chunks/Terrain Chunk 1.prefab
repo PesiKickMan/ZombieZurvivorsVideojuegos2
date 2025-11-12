@@ -503,9 +503,9 @@ MonoBehaviour:
   propPrefabs:
   - {fileID: 5004885401924722039, guid: a13fc8489cabb914582165ace2cd96e5, type: 3}
   - {fileID: 5386496380471948099, guid: 2318f801c6565e346b2dc3f915ea10be, type: 3}
-  - {fileID: 6568224668893337852, guid: 8ab4f7d2e9c8c6a4fb2b6e6cade33c43, type: 3}
-  - {fileID: 8759582305726999245, guid: 54943470c89a40f4690e89ca2441da30, type: 3}
-  - {fileID: 7214584690075997224, guid: ae4cce3f8d8b7dc43aa83574ddc69c57, type: 3}
+  - {fileID: 4640005575498535430, guid: e803ac9a7009682479d77900304ab32e, type: 3}
+  - {fileID: 573542197166534063, guid: 04541fd34074c1e45a357eafe8ddb4ca, type: 3}
+  - {fileID: 5004885401924722039, guid: a13fc8489cabb914582165ace2cd96e5, type: 3}
 --- !u!1 &4944750123303372520
 GameObject:
   m_ObjectHideFlags: 0

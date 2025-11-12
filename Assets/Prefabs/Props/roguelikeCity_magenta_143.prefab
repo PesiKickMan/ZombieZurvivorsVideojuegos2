@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6178634233240648153}
   - component: {fileID: 6768452561296623419}
   - component: {fileID: 140816567674094853}
+  - component: {fileID: -8386176000534894019}
   m_Layer: 8
   m_Name: roguelikeCity_magenta_143
   m_TagString: Untagged
@@ -74,9 +75,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1018507565
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: 712369973
+  m_SortingLayer: 3
+  m_SortingOrder: 0
   m_Sprite: {fileID: 8584809610849239857, guid: ba2ebcc7d6085854b8cab378d06da734, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -87,7 +88,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!61 &140816567674094853
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -122,7 +123,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.00079369545, y: -0.2968475}
+  m_Offset: {x: -0.00079369545, y: 0.079027966}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -132,5 +133,17 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5091183, y: 0.17018569}
+  m_Size: {x: 0.5091183, y: 0.15923783}
   m_EdgeRadius: 0
+--- !u!210 &-8386176000534894019
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410864041026332816}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0

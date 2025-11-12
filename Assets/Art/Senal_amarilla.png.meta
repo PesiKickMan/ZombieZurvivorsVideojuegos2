@@ -1,10 +1,7 @@
 fileFormatVersion: 2
-guid: cb5626074e84aff489586bd9734666a4
+guid: c1b9e5449de05d5459d41e9915d938ae
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 8624211315116350700
-    second: basura_0
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -42,7 +39,7 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -100,23 +97,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: basura_0
+      name: Senal_amarilla_0
       rect:
         serializedVersion: 2
-        x: 4
+        x: 6
         y: 0
-        width: 22
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 72
+        height: 87
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cec1a618f7a5fa770800000000000000
-      internalID: 8624211315116350700
+      spriteID: ede0aa462f9ee8d449bcbde92daf6f62
+      internalID: -483021022
       vertices: []
       indices: 
       edges: []
@@ -125,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d058ccdf16078184281f536fc4972983
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +132,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      basura_0: 8624211315116350700
+      Senal_amarilla_0: -483021022
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

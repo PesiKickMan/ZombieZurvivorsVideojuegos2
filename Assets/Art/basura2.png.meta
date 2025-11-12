@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b923dde33194f8f4cb9aff97417f28e5
+guid: 1c065e8b3439a514cac05d3e9388d6f9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,23 +97,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wallpaperflare.com_wallpaper_0
+      name: basura2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 4597
-        height: 2172
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 96
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f865ca5d30c4d34b9a2d7f4e3e5bd84
-      internalID: -213744526
+      spriteID: ef68bc12f02940c4ebab7960d1f6ca04
+      internalID: 729158514
       vertices: []
       indices: 
       edges: []
@@ -122,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 32162c86f49170c489c69f9a8163791e
+    spriteID: 7c260cfa22fd77641b6207ae5db2b57c
     internalID: 0
     vertices: []
     indices: 
@@ -132,7 +132,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      wallpaperflare.com_wallpaper_0: -213744526
+      basura2_0: 729158514
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

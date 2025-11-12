@@ -182,7 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6567514741420075669}
   - component: {fileID: 4186488906107308078}
-  - component: {fileID: 4783751627969861271}
+  - component: {fileID: 7056937176534391487}
   m_Layer: 6
   m_Name: Terrain Chunk
   m_TagString: Untagged
@@ -267,7 +267,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 20, y: 20.097315}
   m_EdgeRadius: 0
---- !u!114 &4783751627969861271
+--- !u!114 &7056937176534391487
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -285,10 +285,10 @@ MonoBehaviour:
   - {fileID: 9086096033079426439}
   propPrefabs:
   - {fileID: 5004885401924722039, guid: a13fc8489cabb914582165ace2cd96e5, type: 3}
-  - {fileID: 1872720204727214796, guid: 91720881a1e0fa549baf770da4730bb8, type: 3}
-  - {fileID: 8759582305726999245, guid: 54943470c89a40f4690e89ca2441da30, type: 3}
+  - {fileID: 8642995953737847939, guid: 2374a185d4ada8e4c8f0ee171e42ff7c, type: 3}
+  - {fileID: 3920364684477719184, guid: 445c98968e70a8a48835d1803382c7b9, type: 3}
   - {fileID: 1410864041026332816, guid: 1b5d6d0213bdf79498835dc3f590a1c8, type: 3}
-  - {fileID: 6568224668893337852, guid: 8ab4f7d2e9c8c6a4fb2b6e6cade33c43, type: 3}
+  - {fileID: 4640005575498535430, guid: e803ac9a7009682479d77900304ab32e, type: 3}
 --- !u!1 &4944750123303372520
 GameObject:
   m_ObjectHideFlags: 0
