@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerStatsUI : MonoBehaviour
 {
@@ -10,12 +11,21 @@ public class PlayerStatsUI : MonoBehaviour
     public EnemySpawner spawner;
     public GameManager gameManager;
 
+    // Lista de nombres de escenas donde ocultar el apartado de muertes
+    public string[] escenasOcultarMuertes = new string[] {"LabLevel"};
+
     void Update()
     {
+        string escenaActual = SceneManager.GetActiveScene().name;
+        bool ocultarMuertes = System.Array.Exists(escenasOcultarMuertes, escena => escena == escenaActual);
+
+        //Debug.Log("[PlayerStatsUI] Escena actual: " + escenaActual + ", ocultarMuertes: " + ocultarMuertes);
+        //Debug.Log("[PlayerStatsUI] Array escenasOcultarMuertes: " + string.Join(", ", escenasOcultarMuertes));
+
         statsText.text =
             //$"Vida: {playerStats.currentHealth}\n" +
             $"Experiencia: {playerStats.experience}\n" +
             $"Nivel: {playerStats.level}\n" +
-            $"Muertes: {spawner.cantidadMuertes}/{gameManager.winCondition}";
+            (ocultarMuertes ? "" : $"Muertes: {spawner.cantidadMuertes}/{gameManager.winCondition}");
     }
 }
