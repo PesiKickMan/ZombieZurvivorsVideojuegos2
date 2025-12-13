@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using System.Collections;
 using UnityEngine.UI;
+using NUnit.Framework;
 
 public class GameManager : MonoBehaviour
 {
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
 
     bool gameOverTriggered = false;
     bool winTriggered = false;
+    public bool levelUpTriggered = false;
 
     void Start()
     {
@@ -70,7 +72,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                if (!gameOverTriggered && !winTriggered)
+                if (!gameOverTriggered && !winTriggered && !levelUpTriggered)
                     Resume();
             }
         }
@@ -150,12 +152,12 @@ public class GameManager : MonoBehaviour
             looseFadeCanvasGroup.alpha = 1f;
         }
 
-        // Pausar el juego (opcional). Si no quieres pausar, comenta la línea siguiente.
         Time.timeScale = 0f;
     }
 
     public void TriggerWin()
     {
+        SoundManager.instance.PlaySFX(SoundManager.instance.success);
         if (winTriggered) return;
         winTriggered = true;
         StartCoroutine(WinSequence());
@@ -166,7 +168,6 @@ public class GameManager : MonoBehaviour
         if(winUI != null)
         winUI.SetActive(true);
         
-        // Mostrar y hacer fade in usando unscaledDeltaTime para que funcione aun si pausas el juego
         if (winFadeCanvasGroup != null)
         {
             float elapsed = 0f;
@@ -181,7 +182,6 @@ public class GameManager : MonoBehaviour
             winFadeCanvasGroup.alpha = 1f;
         }
 
-        // Pausar el juego (opcional). Si no quieres pausar, comenta la línea siguiente.
         Time.timeScale = 0f;
     }
 }

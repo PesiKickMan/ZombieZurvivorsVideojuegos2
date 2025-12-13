@@ -67,6 +67,9 @@ public class TriggerFinalDoor : MonoBehaviour
     {
         if (boton1Tocado && boton2Tocado && boton3Tocado)
         {
+            if(SoundManager.instance != null)
+                SoundManager.instance.PlaySFX(SoundManager.instance.doorOpen);
+            
             AbrirPuerta();
         }
     }

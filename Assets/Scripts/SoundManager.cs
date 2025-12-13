@@ -15,6 +15,10 @@ public class SoundManager : MonoBehaviour
     public AudioClip fire;
     public AudioClip enemyDeath;
     public AudioClip playerDeath;
+    public AudioClip computer;
+    public AudioClip doorOpen;
+    public AudioClip levelUp;
+    public AudioClip success;
 
     void Awake()
     {
@@ -51,7 +55,6 @@ public class SoundManager : MonoBehaviour
         sfxSrc.PlayOneShot(clip);
     }
 
-    // Método específico para el disparo (opcional)
     public void PlayFire()
     {
         if (fire == null) return;

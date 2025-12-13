@@ -82,7 +82,11 @@ public class PlayerStats : MonoBehaviour
                 levelUpUI.SetActive(true);
             }
 
+            if(SoundManager.instance != null)
+                SoundManager.instance.PlaySFX(SoundManager.instance.levelUp);
+            
             levelUpManager.AplicarMejora();
+            gameManager.levelUpTriggered = true;
         }
     }
 

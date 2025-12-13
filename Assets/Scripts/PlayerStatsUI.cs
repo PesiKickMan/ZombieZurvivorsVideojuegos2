@@ -19,9 +19,6 @@ public class PlayerStatsUI : MonoBehaviour
         string escenaActual = SceneManager.GetActiveScene().name;
         bool ocultarMuertes = System.Array.Exists(escenasOcultarMuertes, escena => escena == escenaActual);
 
-        //Debug.Log("[PlayerStatsUI] Escena actual: " + escenaActual + ", ocultarMuertes: " + ocultarMuertes);
-        //Debug.Log("[PlayerStatsUI] Array escenasOcultarMuertes: " + string.Join(", ", escenasOcultarMuertes));
-
         statsText.text =
             //$"Vida: {playerStats.currentHealth}\n" +
             $"Experiencia: {playerStats.experience}\n" +

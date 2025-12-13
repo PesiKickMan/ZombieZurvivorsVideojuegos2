@@ -23,6 +23,9 @@ public class BotonMultiPuerta : MonoBehaviour
         {
             yaFueTocado = true;
 
+            if(SoundManager.instance != null)
+                SoundManager.instance.PlaySFX(SoundManager.instance.computer);
+
             // Notificar a la puerta que este botón fue tocado
             puertaControlada.ReportarBotonTocado(numeroBoton);
 

@@ -15,6 +15,8 @@ public class LevelUp : MonoBehaviour
     private Button[] botones;
     
     public GameObject levelUpUI;
+
+    [SerializeField] private GameManager gameManager;
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -55,6 +57,7 @@ public class LevelUp : MonoBehaviour
     }
 
     public void SeleccionarMejora(Button boton){
+        gameManager.levelUpTriggered = false;
         string texto = boton.GetComponentInChildren<TextMeshProUGUI>().text;
 
         switch (texto)

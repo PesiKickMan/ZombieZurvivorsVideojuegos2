@@ -189,6 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 42c84820379097d498df9b0c908d4127, type: 2}
   cantidadMuertes: 0
+  damageCooldown: 0.5
 --- !u!114 &-6974028863748807323
 MonoBehaviour:
   m_ObjectHideFlags: 0
