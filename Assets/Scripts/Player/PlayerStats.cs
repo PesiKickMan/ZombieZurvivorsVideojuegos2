@@ -9,10 +9,10 @@ public class PlayerStats : MonoBehaviour
 
     //Stats Actuales
     //public float currentHealth;
-    float currentRecovery;
-    float currentMoveSpeed;
-    float currentMight;
-    float currentProjectileSpeed;
+    public float currentRecovery;
+    public float currentMoveSpeed;
+    public float currentMight;
+    public float currentProjectileSpeed;
 
     //Experiencia y Nivel
     [Header("Experience/Level")]
@@ -20,6 +20,8 @@ public class PlayerStats : MonoBehaviour
     public int level = 1;
     public int experienceCap = 100;
     public int experienceCapIncrease;
+    public LevelUp levelUpManager;
+    public GameObject levelUpUI;
 
     [Header("I-Frames")]
     public float invincibilityDuration;
@@ -74,6 +76,13 @@ public class PlayerStats : MonoBehaviour
             level++;
             experience -= experienceCap;
             experienceCap += experienceCapIncrease;
+            
+            if(levelUpUI != null){
+                Time.timeScale = 0f; // Pausa el juego
+                levelUpUI.SetActive(true);
+            }
+
+            levelUpManager.AplicarMejora();
         }
     }
 

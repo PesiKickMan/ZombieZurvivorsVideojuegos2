@@ -12,6 +12,10 @@ public class EnemyStats : MonoBehaviour
     //Contador de muertes
     public int cantidadMuertes = 0;
 
+    //Cooldown para daño
+    public float damageCooldown = 0.5f;
+    private float lastDamageTime;
+
     void Awake()
     {
         currentMoveSpeed = enemyData.MoveSpeed;
@@ -41,12 +45,16 @@ public class EnemyStats : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+    private void OnTriggerStay2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            PlayerStats player = col.gameObject.GetComponent<PlayerStats>();
-            player.TakeDamage(currentDamage);
+            if (Time.time - lastDamageTime > damageCooldown)
+            {
+                PlayerStats player = col.gameObject.GetComponent<PlayerStats>();
+                player.TakeDamage(currentDamage);
+                lastDamageTime = Time.time;
+            }
         }
     }
 }

@@ -3,6 +3,7 @@ using UnityEngine;
 public class ProjectileWeaponBehaviour : MonoBehaviour
 {
     public WeaponScriptableObject weaponData;
+    private PlayerStats playerStats;
 
     protected Vector3 direction;
     public float destroyAfterSeconds;
@@ -13,18 +14,25 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
     protected float currentCooldownDuration;
     protected float currentPierce;
 
-    void Awake()
-    {
-        currentSpeed = weaponData.Speed;
-        currentDamage = weaponData.Damage;
-        currentCooldownDuration = weaponData.CooldownDuration;
-        currentPierce = weaponData.Pierce;
-    }
-
     protected virtual void Start()
     {
+        playerStats = FindFirstObjectByType<PlayerStats>();
+        currentSpeed = weaponData.Speed * playerStats.currentProjectileSpeed;
+        currentDamage = weaponData.Damage * playerStats.currentMight;
+        currentCooldownDuration = weaponData.CooldownDuration * playerStats.currentProjectileSpeed;
+        currentPierce = weaponData.Pierce;
         Destroy(gameObject, destroyAfterSeconds);
     }
+
+   /* void Update()
+    {
+        if (playerStats != null)
+        {
+            currentDamage = weaponData.Damage * playerStats.currentMight;
+            currentSpeed = weaponData.Speed * playerStats.currentProjectileSpeed;
+            currentCooldownDuration = weaponData.CooldownDuration * playerStats.currentProjectileSpeed;
+        }
+    }*/
 
     public void DirectionChecker(Vector3 dir)
     {

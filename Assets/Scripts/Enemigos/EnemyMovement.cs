@@ -9,12 +9,15 @@ public class EnemyMovement : MonoBehaviour
     [HideInInspector]
     public Vector2 ultimoMovimiento;
     SpriteRenderer spriteRenderer;
+    Rigidbody2D rb;
 
-
+    [System.Obsolete]
     void Start()
     {
         player = FindFirstObjectByType<Movimiento>().transform;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
+        rb.isKinematic = true;
         ultimoMovimiento = Vector2.right; 
     }
 
@@ -29,7 +32,7 @@ public class EnemyMovement : MonoBehaviour
         }
 
         //Movimiento del enemigo
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, enemyData.MoveSpeed * Time.deltaTime);
+        rb.MovePosition(Vector2.MoveTowards(rb.position, player.transform.position, enemyData.MoveSpeed * Time.deltaTime));
 
         if (ultimoMovimiento.x < 0)
         {
