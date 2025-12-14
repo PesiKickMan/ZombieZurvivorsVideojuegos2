@@ -7,6 +7,7 @@ public class LabLevelWin : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
+            DesbloquearNivel.nivel2Desbloqueado = true;
             gameManager.TriggerWin();
         }
     }
